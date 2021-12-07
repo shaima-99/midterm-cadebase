@@ -8,6 +8,10 @@ import 'package:flutter/material.dart';
 
 
 class NoteScreen extends StatelessWidget {
+  get index => null;
+
+  get value => null;
+
   Widget build(BuildContext context) {
     var widget;
     return Scaffold(
@@ -21,13 +25,13 @@ class NoteScreen extends StatelessWidget {
                 Icons.check_circle,
                 size: 30,
               ),
-              onPressed: () {}),
+              onPressed:() => _navigate(index)),
           IconButton(
               icon: Icon(
                 Icons.cancel_sharp,
                 size: 30,
               ),
-              onPressed: () {}),
+              onPressed: () => _navigate(index)),
         ],
       ),
       body: Container(
@@ -40,7 +44,12 @@ class NoteScreen extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Type the title here',
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                                    if (validate() == true) {
+                                      var form;
+                                      form.currentState.save();
+                                      var user;
+                                    ;}}
             ),
             SizedBox(
               height: 5,
@@ -54,7 +63,13 @@ class NoteScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: 'Type the description',
                   ),
-                  onChanged: (value) {}),
+                  onChanged: git (value) {
+                                    if (validate() == true) {
+                                      var form;
+                                      form.currentState.save();
+                                      var user;
+                                    ;}}
+            ),),
             ),
            
 
@@ -65,4 +80,12 @@ class NoteScreen extends StatelessWidget {
       ),
     );
   }
+
+  validate() {}
+
+  void addUserToList(name, email) {}
+}
+
+class _navigate {
+  _navigate(index);
 }
