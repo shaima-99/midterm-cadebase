@@ -2,9 +2,9 @@
 
 class Note {
   String title;
-String content;
+  String content;
 
-  Note({ this.title, this.content });
-  Note.copy(Note from) : this(title: from.title, content: from.content);
+  Note(this.title, this.content);
+  Note.copy(Note from) : this(from.title, from.content);
 }
  

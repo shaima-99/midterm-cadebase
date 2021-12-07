@@ -2,7 +2,12 @@
 
 import 'note.dart';
 
-final noteList = <Note>[];
+final noteList = <Note>[
+  Note("what is flutter", "The amount they interacted with students"),
+  Note("statful widget", "Degree of participation in class and events"),
+  Note("conditional ternary", "The effort they put into their teachinf methods"),
+
+];
 
 //? Here are some sample data that you can copy-paste in order to create the mock database
 //? --------------------------------------------------------------------------------------
