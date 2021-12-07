@@ -25,6 +25,8 @@ class _ListScreenState extends State<ListScreen> {
 
   get flag => null;
 
+  get name => null;
+
   @override
   Widget build(BuildContext context) {
     var secondHalf;
@@ -65,14 +67,17 @@ class _ListScreenState extends State<ListScreen> {
                 children: [
                   IconButton(
                     icon: Icon(Icons.edit, color: Colors.blue),
-                    onPressed: () {},
+                    onPressed: () {
+                          _updateTextControllers(name); // new function here
+                        },
                   ),
                   IconButton(
                     icon: Icon(
                       Icons.delete,
                       color: Colors.blue,
                     ),
-                    onPressed:() => _navigate(index),
+                    onPressed:() =>
+                            _deleteTextControllers(name),
                   ),
                 ],
               ),
@@ -84,6 +89,7 @@ class _ListScreenState extends State<ListScreen> {
             onLongPress:() => _navigate(index),
           ),
         ),
+        
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -110,6 +116,14 @@ class _ListScreenState extends State<ListScreen> {
   }
 
   _navigate(int index) {}
+}
+
+class _updateTextControllers {
+  _updateTextControllers(name);
+}
+
+class _deleteTextControllers {
+  _deleteTextControllers(name);
 }
 
 
