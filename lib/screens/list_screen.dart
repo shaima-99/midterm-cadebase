@@ -8,11 +8,15 @@ import 'package:flutter/material.dart';
 // import '../models/note.dart';
 
 class ListScreen extends StatefulWidget {
+  get _data => null;
+
   @override
   _ListScreenState createState() => _ListScreenState();
 }
 
 class _ListScreenState extends State<ListScreen> {
+  var onTap;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,15 +55,15 @@ class _ListScreenState extends State<ListScreen> {
                     Icons.delete,
                     color: Colors.blue,
                   ),
-                  onPressed: () {},
+                  onPressed:() => _navigate(index),
                 ),
               ],
             ),
           ),
           title: Text('Note title'),
           subtitle: Text('Note content'),
-          onTap: () {},
-          onLongPress: () {},
+          onTap: () => _navigate(index),
+          onLongPress:() => _navigate(index),
         ),
       ),
       floatingActionButton: Row(
@@ -68,14 +72,23 @@ class _ListScreenState extends State<ListScreen> {
           FloatingActionButton(
               child: Icon(Icons.unfold_less),
               tooltip: 'Show less. Hide notes content',
-              onPressed: () {}),
+              heroTag: null,
+              onPressed: () => Navigator.of(context).pop(widget._data), ),
           FloatingActionButton(
             child: Icon(Icons.add),
             tooltip: 'Add a new note',
-            onPressed: () {},
+            heroTag: null,
+            onPressed: () => Navigator.of(context).pop(widget._data),
           ),
+        
+                    
+                 
         ],
+
+        
       ),
     );
   }
+
+  _navigate(int index) {}
 }

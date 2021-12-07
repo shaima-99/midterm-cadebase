@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 class NoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
+    var widget;
     return Scaffold(
       appBar: AppBar(
         leading: Container(),
@@ -54,6 +55,18 @@ class NoteScreen extends StatelessWidget {
                   ),
                   onChanged: (value) {}),
             ),
+           
+
+FloatingActionButton.extended(
+icon: const Icon(Icons.check_circle),
+heroTag: null,
+onPressed: () => Navigator.of(context).pop(widget._data), label: null,
+),
+FloatingActionButton.extended(
+icon: const Icon(Icons.cancel_sharp),
+heroTag: null,
+onPressed: () => Navigator.of(context).pop(widget._data), label: null,
+),
           ],
         ),
       ),
