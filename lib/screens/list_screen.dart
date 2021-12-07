@@ -10,15 +10,29 @@ import 'package:flutter/material.dart';
 class ListScreen extends StatefulWidget {
   get _data => null;
 
+  get text => null;
+
   @override
   _ListScreenState createState() => _ListScreenState();
 }
+// ignore: unused_element
+
 
 class _ListScreenState extends State<ListScreen> {
   var onTap;
 
+  String get firstHalf => null;
+
+  get flag => null;
+
   @override
   Widget build(BuildContext context) {
+    var secondHalf;
+     child: secondHalf.isEmpty
+          ? new Text(firstHalf)
+          : new Column(
+              children: <Widget>[
+                new Text(flag ? (firstHalf + "...") : (firstHalf + secondHalf)),),]
     return Scaffold(
       appBar: AppBar(
         title: Text('My Notes'),
@@ -36,59 +50,67 @@ class _ListScreenState extends State<ListScreen> {
         ],
       ),
       body: ListView.separated(
-        itemCount: 4,
-        separatorBuilder: (context, index) => Divider(
-          color: Colors.blueGrey,
-        ),
-        itemBuilder: (context, index) => ListTile(
-          trailing: SizedBox(
-            width: 110.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.edit, color: Colors.blue),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.delete,
-                    color: Colors.blue,
+        padding: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+    
+          itemCount: 4,
+          separatorBuilder: (context, index) => Divider(
+            color: Colors.blueGrey,
+          ),
+          itemBuilder: (context, index) => ListTile(
+            
+            trailing: SizedBox(
+              width: 110.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.edit, color: Colors.blue),
+                    onPressed: () {},
                   ),
-                  onPressed:() => _navigate(index),
-                ),
-              ],
+                  IconButton(
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.blue,
+                    ),
+                    onPressed:() => _navigate(index),
+                  ),
+                ],
+              ),
             ),
+            
+            title: Text('Note title'),
+            subtitle: Text('Note content'),
+            onTap: () => _navigate(index),
+            onLongPress:() => _navigate(index),
           ),
-          title: Text('Note title'),
-          subtitle: Text('Note content'),
-          onTap: () => _navigate(index),
-          onLongPress:() => _navigate(index),
         ),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-              child: Icon(Icons.unfold_less),
-              tooltip: 'Show less. Hide notes content',
+        floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            
+            FloatingActionButton(
+                child: Icon(Icons.unfold_less),
+                tooltip: 'Show less. Hide notes content',
+                heroTag: null,
+                onPressed: () => Navigator.of(context).pop(widget._data), ),
+            FloatingActionButton(
+              child: Icon(Icons.add),
+              tooltip: 'Add a new note',
               heroTag: null,
-              onPressed: () => Navigator.of(context).pop(widget._data), ),
-          FloatingActionButton(
-            child: Icon(Icons.add),
-            tooltip: 'Add a new note',
-            heroTag: null,
-            onPressed: () => Navigator.of(context).pop(widget._data),
-          ),
-        
-                    
-                 
-        ],
+              onPressed: () => Navigator.of(context).pop(widget._data),
+            ),
+          
+                      
+                   
+          ],
 
-        
-      ),
-    );
+          
+        ),
+      );
   }
 
   _navigate(int index) {}
 }
+
+
+
