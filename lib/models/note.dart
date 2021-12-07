@@ -2,9 +2,9 @@
 
 class Note {
   String title;
-  bool completed;
+String content;
 
-  Note({ this.title, this.completed = false});
-  Note.copy(Note from) : this(title: from.title, completed: from.completed);
+  Note({ this.title, this.content });
+  Note.copy(Note from) : this(title: from.title, content: from.content);
 }
  
